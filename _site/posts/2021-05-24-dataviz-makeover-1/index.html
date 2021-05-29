@@ -2142,21 +2142,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="data-preparation">Data Preparation</h2>
 <p>Reorganizing the data by using Excel for further use. All the steps displayed below should be operated in both T1 and T2 sheets that contain Imports and Exports trading data separately.</p>
 <ul>
-<li><p><strong>Step 1:</strong> Delete unnecessary rows in the original datasheet.</p>
+<li><p><strong>Step 1: Delete unnecessary rows</strong></p>
 <center>
 <p><img src="img/image03.jpg" style="width:50.0%" /></p>
 <center></li>
-<li><p><strong>Step 2:</strong> Rename undesired data Since this DataViz Makeover will only focus on the merchandise trade of the top 6 countries (Mainland China, Malaysia, United States. Taiwan, Japan, and Hong Kong) from the beginning of 2019 to the end of 2020, undesired data should be removed until the sheets look like the image below: <img src="img/image04.jpg" /></p></li>
-<li><p><strong>Step 3:</strong> Reorganizing data in a new sheet Tableau recognizes variables by column. Because of this feature, the original data needs to be reorganized. First of all, we need to create a new worksheet named ‘Data’ in the original excel file. Add new headers in the Datasheet. There will be in total 4 variables and we should name them “Country”, “Time”, “Imports (K)”, and “Exports (K)”. “K” in the header stands for Thousand Dollars. Copy data from the original sheets and paste them into Data under corresponding headers. Remember to select the Transpose option while pasting. In order to let Tableau recognizes the “Time” variable as Date, we need to make sure data under the Time header is in the format of Date.</p>
+<li><p><strong>Step 2: Rename undesired data</strong> Since this DataViz Makeover will only focus on the merchandise trade of the top 6 countries (Mainland China, Malaysia, United States. Taiwan, Japan, and Hong Kong) from the beginning of 2019 to the end of 2020, undesired data should be removed until the sheets look like the image below:</p>
+<center>
+<p><img src="img/image04.jpg" style="width:70.0%" /></p></li>
+<li><p><strong>Step 3: Reorganizing data</strong> Tableau recognizes variables by column. Because of this feature, the original data needs to be reorganized. First of all, we need to create a new worksheet named ‘Data’ in the original excel file. Add new headers in the Datasheet. There will be in total 4 variables and we should name them “Country”, “Time”, “Imports (K)”, and “Exports (K)”. “K” in the header stands for Thousand Dollars. Copy data from the original sheets and paste them into Data under corresponding headers. Remember to select the Transpose option while pasting. In order to let Tableau recognizes the “Time” variable as Date, we need to make sure data under the Time header is in the format of Date.</p>
 <center>
 <p><img src="img/image05.jpg" style="width:50.0%" /></p>
 <center></li>
-<li><p><strong>Step 4:</strong> Delete undesired sheets Delete Content, T1, and T2 from the file. Only the sheet ‘Data’ should be kept.</p></li>
+<li><p><strong>Step 4: Delete undesired sheets</strong> Delete Content, T1, and T2 from the file. Only the sheet ‘Data’ should be kept.</p></li>
 </ul>
 <h2 id="importing-data-into-tableau">Importing Data into Tableau</h2>
 <ul>
-<li><p><strong>Step 1:</strong> Open Excel file in Tableau After open Tableau, select File from panel above to open the file we prepared:</p></li>
-<li><p><strong>Step 2:</strong> Change the data type Making sure all the variables are in the correct data types. ‘Country’ should be a string format, recognized as Geographic role in Country. ‘Time’ should be recognized as Date. Exports (K) and Imports (K) should in the format of Number (whole).</p>
+<li><p><strong>Step 1: Open Excel file in Tableau</strong> After open Tableau, select File from panel above to open the file we prepared:</p></li>
+<li><p><strong>Step 2: Change the data type</strong> Making sure all the variables are in the correct data types. ‘Country’ should be a string format, recognized as Geographic role in Country. ‘Time’ should be recognized as Date. Exports (K) and Imports (K) should in the format of Number (whole).</p>
 <center>
 <p><img src="img/image07.jpg" style="width:50.0%" /></p>
 <center></li>
@@ -2165,20 +2167,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>There are two main purposes of the original graph, hence two worksheets will be created in this DataViz Makeover to ensure the proposed visualization can have all the functions that the original graph has.</p>
 <h3 id="worksheet-1-balance-of-trade-of-the-top-6-countries">Worksheet 1: Balance of Trade of the top 6 countries</h3>
 <ul>
-<li><strong>Step 1:</strong> Add a new variable To draw the first graph, we need to add a new variable in Tableau that represents the Net Exports/ Balance of Trade of 6 selected countries. Get into the worksheet window, select Analysis &gt; Create Calculated Field. Creating the formula of Net Exports by dragging the existed variables into the newly opened window and name it Net Exports (K):
+<li><strong>Step 1: Add a new variable</strong> To draw the first graph, we need to add a new variable in Tableau that represents the Net Exports/ Balance of Trade of 6 selected countries. Get into the worksheet window, select Analysis &gt; Create Calculated Field. Creating the formula of Net Exports by dragging the existed variables into the newly opened window and name it Net Exports (K):
 <center>
 <img src="img/image08.jpg" style="width:50.0%" />
 <center></li>
 </ul>
 <p>Then we can find a new variable called ‘Net Exports (K)’ on the left side panel.</p>
 <ul>
-<li><p><strong>Step 2:</strong> Set up the graph Filling the columns and rows using existed variables as the image below. Tableau will automatically draw the graph in a horizontal bar format.</p>
+<li><p><strong>Step 2: Set up the graph</strong> Filling the columns and rows using existed variables as the image below. Tableau will automatically draw the graph in a horizontal bar format.</p>
 <center>
-<p><img src="img/image09.jpg" style="width:50.0%" /></p></li>
-<li><p><strong>Step 3:</strong> Improve the design of the graph The following procedures should be performed to improve the design of the graph:</p></li>
+<p><img src="img/image09.jpg" style="width:70.0%" /></p></li>
+<li><p><strong>Step 3: Improve the design</strong> The following procedures should be performed to improve the design of the graph:</p></li>
 <li><p>Coloring the table based on the sum of the Net Exports of each year.Set the colors into a 2 steps color palette. In this way, the bar will be displayed in red if the Net Exports of a particular country are negative and blue otherwise. The two colors selected by Tableau are quite rich and significantly contrast with each other and the background, therefore we will keep the color choice in this way. The color card is going to be hidden from the graph since they are not necessary for the audience.</p>
 <center>
-<p><img src="img/image10.jpg" style="width:50.0%" /></p></li>
+<p><img src="img/image10.jpg" style="width:70.0%" /></p></li>
 <li><p>Adding mark labels by selecting ‘Sum Net Export (K)’ under Label. Set the font size of the label to 8 and make the text bold. Set the labels into a lighter black so that they would not all the attention from the audience. Mark labels will help to identify the represented value of each bar.</p></li>
 <li><p>Sort the graph in a descending order based on the sum of Net Exports values in 2020 (since the data in the latest year could be more important for the users). The will make the graph more organized.</p></li>
 <li><p>Formatting the tick marks on the x-axis into a darker black. Net export value is a continuous scale. Thick mark help to show the exact point on the axis.</p></li>
@@ -2186,6 +2188,32 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Add Annotation by right-clicking the bars that worth attention. The font size of the annotation is set to be 10 and bold. If the important change is an improvement, the annotation would be green. If the change is degeneration, the color of the annotation would be red.</p></li>
 </ul>
 <p>The resultant graph is as follows: <img src="img/image12.jpg" /></p>
+<h3 id="worksheet-2-comparison-of-the-merchandise-trading-patterns-of-top-6-countries">Worksheet 2: Comparison of the Merchandise Trading Patterns of Top 6 Countries</h3>
+<ul>
+<li><strong>Step 1: Set up the graph</strong> Filling the columns and rows using existed variables as the image displayed below. Color the graph based on variable Country. Under Show Me, I selected Line (continuous) try. The resultant graph is shown below:
+<center>
+<img src="img/image13.jpg" style="width:70.0%" /></li>
+</ul>
+<p>A line graph has drawn here since we want to compare changes over the same period for all 6 countries. Line graph serves better than bar graph here since it can display some small changes within a period of time. The data covers merchandise trades over 2 years. In order to catch significant small changes and avoid messiness at the same time, the column is filled with Quarters (Time) instead of Years or Months.</p>
+<ul>
+<li><strong>Step 2: Improve the design</strong></li>
+</ul>
+<p>The following procedures should be performed to improve the design of the graph:</p>
+<ul>
+<li><p>Ensure the y-axis for both the Exports and Imports sections share the same range so that the y-axis of the whole visualization is consistent. To achieve this, I set a fixed range for both y-axes as follows:</p>
+<center>
+<p><img src="img/image14.jpg" style="width:50.0%" /></p></li>
+<li><p>Reset the color of Malaysia to purple since the turquoise color originally chosen by Tableau does not efficiently contrast to some other colors in the graph (such as green and blue). Colors that strongly contrast with each other would help the users to read and compare the trading patterns of different countries.</p>
+<center>
+<p><img src="img/image15.jpg" style="width:50.0%" /></p></li>
+<li><p>Adding labels and removing legend from the graph. Select ‘Country’ under Label and set the font size to 8 and bold. Make sure the label matches the mark color so audiences would know which line it indicates. A direct label is more convenient to read compares to legend.</p>
+<center>
+<p><img src="img/image16.jpg" style="width:50.0%" /></p></li>
+<li><p>Formatting the tick marks on the axis into a darker black. Net exports value and Time are both continuous scales. Thick mark necessary for continuous scales.</p></li>
+<li><p>Add title ‘Merchandise Trading Patterns of Top 6 Countries (2019-2020)’. The font size is set to be 15 and bold.</p></li>
+<li><p>Add annotation to emphasize the main finding of the graph. The font size of the annotation is set to be 8 and bold.</p></li>
+</ul>
+<p>The resultant graph is as follows: <img src="img/image17.jpg" /></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
