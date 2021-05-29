@@ -16,14 +16,14 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Original Data Visualization
+## Original Data Visualization
 
 The original data visualization looks like the graph presented below:
 ![](img/image01.jpg)
 The graph presented the merchandise imports and exports of 6 different countries between 2019 to 2020. Six countries included should be the top six trading countries that have the greatest trading values. 
 
 
-# Part A: Critique of Visualisation
+## Part A: Critique of Visualisation
 
 ### Clarity
 
@@ -52,15 +52,14 @@ The graph presented the merchandise imports and exports of 6 different countries
 
 
 
-# Part B: Alternative Design
+## Part B: Alternative Design
 
 The proposed alternative visualization design is displayed below:
 
 ![](img/image02.jpg)
+### Advantages of the new design: 
 
-## Advantages of the new design: 
-
-### Clarity
+#### Clarity
 
 1. **Clear titles** are provided to indicate the purpose of the graphs and help audiences to catch the key information quickly.
 2. **Consistency of the units and labels** for the x-axis and y-axis. This would make avoid the misleading display of the data provided.
@@ -68,7 +67,7 @@ The proposed alternative visualization design is displayed below:
 4. **Better graph formats** are adopted to deliver the data in a better and clearer way. 
 5. **Annotation** will be added to help to tell the data story.
 
-### Aesthetic
+#### Aesthetic
 
 1. **Tick marks** can be seen by the audiences and help them to identify the divisions on the axis.
 2. **Legends can be replaced by direct labels**. This makes it easier for the audience to read and also enhance the tidiness of the visualization
@@ -77,16 +76,16 @@ The proposed alternative visualization design is displayed below:
 
 
 
-# Part C: Proposed Visualisation
+## Part C: Proposed Visualisation
 
 Please view the interactive visualization on Tableau Public [**here**](https://public.tableau.com/app/profile/manye.liu/viz/DataVisualization_16223090271340/Finallook)
 
 
 
-# Part D: Step-by-step Guide
+## Part D: Step-by-step Guide
 After downloading data from the Department of Statistics, Singapore (DOS), we can prepare the proposed alternative data visualization step-by-step.
 
-## Data Preparation
+### Data Preparation
 Reorganizing the data by using Excel for further use. All the steps displayed below should be operated in both T1 and T2 sheets that contain Imports and Exports trading data separately.
 
 * **Step 1: Delete unnecessary rows**
@@ -114,7 +113,7 @@ In order to let Tableau recognizes the "Time" variable as Date, we need to make 
 Delete Content, T1, and T2 from the file. Only the sheet 'Data' should be kept.
 
 
-## Importing Data into Tableau
+### Importing Data into Tableau
 
 * **Step 1: Open Excel file in Tableau**
 After open Tableau, select File from panel above to open the file we prepared:
@@ -129,10 +128,10 @@ Making sure all the variables are in the correct data types.
 
 
 
-## Creating Worksheets
+### Creating Worksheets
 There are two main purposes of the original graph, hence two worksheets will be created in this DataViz Makeover to ensure the proposed visualization can have all the functions that the original graph has.
 
-### Worksheet 1: Balance of Trade of the top 6 countries
+#### Worksheet 1: Balance of Trade of the top 6 countries
 
 * **Step 1: Add a new variable**
 To draw the first graph, we need to add a new variable in Tableau that represents the Net Exports/ Balance of Trade of 6 selected countries.
@@ -176,7 +175,7 @@ The following procedures should be performed to improve the design of the graph:
 The resultant graph is as follows:
 ![](img/image12.jpg)
 
-### Worksheet 2: Comparison of the Merchandise Trading Patterns of Top 6 Countries
+#### Worksheet 2: Comparison of the Merchandise Trading Patterns of Top 6 Countries
 
 * **Step 1: Set up the graph**
 Filling the columns and rows using existed variables as the image displayed below. Color the graph based on variable Country. Under Show Me, I selected Line (continuous) try. The resultant graph is shown below:
@@ -215,12 +214,12 @@ The following procedures should be performed to improve the design of the graph:
 The resultant graph is as follows:
 ![](img/image17.jpg)
 
-## Creating Worksheets
+### Creating Worksheets
 To display both worksheets on a single page, we need to create a new dashboard. 
 The final look of the dashboard is presented below:
 ![](img/image19.jpg)
 
-# Part E: Main Observations from New Visualization
+## Part E: Main Observations from New Visualization
 
 1. Based on the graph **Balance of Trade of Top 6 Countries (2019-2020)**, the balance of trade of these countries can be analyzed.
 
