@@ -125,3 +125,53 @@ Making sure all the variables are in the correct data types.
 <center>
 ![](img/image07.jpg){width=50%}
 <center>
+
+
+
+## Creating Worksheets
+There are two main purposes of the original graph, hence two worksheets will be created in this DataViz Makeover to ensure the proposed visualization can have all the functions that the original graph has.
+
+### Worksheet 1: Balance of Trade of the top 6 countries
+
+* **Step 1:** Add a new variable
+To draw the first graph, we need to add a new variable in Tableau that represents the Net Exports/ Balance of Trade of 6 selected countries.
+Get into the worksheet window, select Analysis > Create Calculated Field. Creating the formula of Net Exports by dragging the existed variables into the newly opened window and name it Net Exports (K): 
+<center>
+![](img/image08.jpg){width=50%}
+<center>
+
+Then we can find a new variable called 'Net Exports (K)' on the left side panel.
+
+
+* **Step 2:** Set up the graph
+Filling the columns and rows using existed variables as the image below. 
+Tableau will automatically draw the graph in a horizontal bar format.
+<center>
+![](img/image09.jpg){width=50%}
+
+
+* **Step 3:** Improve the design of the graph
+The following procedures should be performed to improve the design of the graph:
+
+* Coloring the table based on the sum of the Net Exports of each year.Set the colors into a 2 steps color palette. In this way, the bar will be displayed in red if the Net Exports of a particular country are negative and blue otherwise. The two colors selected by Tableau are quite rich and significantly contrast with each other and the background, therefore we will keep the color choice in this way. The color card is going to be hidden from the graph since they are not necessary for the audience.
+<center>
+![](img/image10.jpg){width=50%}
+
+
+* Adding mark labels by selecting ‘Sum Net Export (K)’ under Label. Set the font size of the label to 8 and make the text bold. Set the labels into a lighter black so that they would not all the attention from the audience. Mark labels will help to identify the represented value of each bar.
+
+
+* Sort the graph in a descending order based on the sum of Net Exports values in 2020 (since the data in the latest year could be more important for the users). The will make the graph more organized.
+
+
+* Formatting the tick marks on the x-axis into a darker black. Net export value is a continuous scale. Thick mark help to show the exact point on the axis.
+
+ 
+* Add title ‘Balance of Trade of Top 6 Countries (2019-2020)’. The font size is set to be 15 and bold.
+
+ 
+* Add Annotation by right-clicking the bars that worth attention. The font size of the annotation is set to be 10 and bold. If the important change is an improvement, the annotation would be green. If the change is degeneration, the color of the annotation would be red.
+
+The resultant graph is as follows:
+![](img/image12.jpg)
+
