@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","img/image01.jpg"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","img/image01.jpg","img/image02.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2100,7 +2100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1 id="original-data-visualization">Original Data Visualization</h1>
 <p>The original data visualization looks like the graph presented below: <img src="img/image01.jpg" /> The graph presented the merchandise imports and exports of 6 different countries between 2019 to 2020. Six countries included should be the top six trading countries that have the greatest trading values.</p>
 <h1 id="part-a-critique-of-visualisation">Part A: Critique of Visualisation</h1>
-<h2 id="clarity">Clarity</h2>
+<h3 id="clarity">Clarity</h3>
 <ol type="1">
 <li><p><strong>Uninformed Title:</strong> The title of the original graph “Merchandise Trade of Top Six Trading Countries, 2019-2020” does not indicate what the visualization is intended to do. It is quite vague to say what message this graph trying to emphasize. Does it highlight the differences between imports and exports value within 6 countries or does it compare merchandise trading trends of these countries? An unclear title makes it difficult for the audience to catch the key message quickly.</p></li>
 <li><p><strong>Inconsistency of period presented:</strong> The x-axis label for Japan is different from the others (2020 only). The graph of Japan contains less information than the others. The difference between the trading history of Japan and that of other countries is unclear because of this limitation.</p></li>
@@ -2109,14 +2109,32 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p><strong>Unnecessary use of Area Chart:</strong> Area chart should be considered only if the total of the value presented is as important as its shares or if there is a large difference between the value presented. However, the original graph does not have any of these purposes. On the other hand, a line graph can display the trading patterns of each country better and a bar chart would be a better choice to be used to emphasize the difference between each country’s imports and exports value.</p></li>
 <li><p><strong>No Annotation:</strong> Annotation that helps to tell the data story is not used in the original graph.</p></li>
 </ol>
-<h2 id="aesthetic">Aesthetic</h2>
+<h3 id="aesthetic">Aesthetic</h3>
 <ol type="1">
 <li><p><strong>Invisible Tick Mark:</strong> Tick marks are necessary on a continuous scale. They help to mark the major divisions and show the exact point on the axis. The colour of tick marks on the original is too light and makes them invisible and unhelpful.</p></li>
-<li><p><strong>Poor colour choice:</strong> Imports and Exports are displayed using two different colours in the original graph. However, both colours are too light hence they do not contrast sufficiently with each other. Using brighter colours will improve the aesthetics of the visualization.</p></li>
+<li><p><strong>Poor color choice:</strong> Imports and Exports are displayed using two different colours in the original graph. However, both colours are too light hence they do not contrast sufficiently with each other. Using brighter colors will improve the aesthetics of the visualization.</p></li>
 <li><p><strong>Separated graphs:</strong> Merchandise trades of these countries are presented in 6 separate graphs. 6 graphs are too much to be showed on one dashboard; this makes the whole visualization ununited and scattered. To improve the aesthetics, data should be presented with a smaller number of separated graphs.</p></li>
 <li><p><strong>Legend:</strong> A legend is used to indicate different trading types. It could be quite troublesome for audiences to check the legend when they read the graph. A legend should be replaced by a direct label if possible.</p></li>
 </ol>
-<h1 id="installing-and-launching-r-packages">2.0 Installing and Launching R Packages</h1>
+<h1 id="part-b-alternative-design">Part B: Alternative Design</h1>
+<p>The proposed alternative visualization design is displayed below:</p>
+<p><img src="img/image02.jpg" /></p>
+<h2 id="advantages-of-the-new-design">Advantages of the new design:</h2>
+<h3 id="clarity-1">Clarity</h3>
+<ol type="1">
+<li><strong>Clear titles</strong> are provided to indicate the purpose of the graphs and help audiences to catch the key information quickly.</li>
+<li><strong>Consistency of the units and labels</strong> for the x-axis and y-axis. This would make avoid the misleading display of the data provided.</li>
+<li>Display trading data in a quarter unit would <strong>display smaller changes</strong> that cannot be found in the original graph.</li>
+<li><strong>Better graph formats</strong> are adopted to deliver the data in a better and clearer way.</li>
+<li><strong>Annotation</strong> will be added to help to tell the data story.</li>
+</ol>
+<h3 id="aesthetic-1">Aesthetic</h3>
+<ol type="1">
+<li><strong>Tick marks</strong> can be seen by the audiences and help them to identify the divisions on the axis.</li>
+<li><strong>Legends can be replaced by direct labels</strong>. This makes it easier for the audience to read and also enhance the tidiness of the visualization</li>
+<li><strong>Fewer graphs</strong> are presented on one dashboard. Information is united and the display of the dashboard would be more organized.</li>
+<li><strong>Contrasting colors</strong> are used to help to deliver the information and improve the aesthetic design of the visualization.</li>
+</ol>
 <p>Before you get started, you are required:</p>
 <ul>
 <li>to start a new R project, and

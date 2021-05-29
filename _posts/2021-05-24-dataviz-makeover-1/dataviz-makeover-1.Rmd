@@ -24,7 +24,7 @@ The graph presented the merchandise imports and exports of 6 different countries
 
 # Part A: Critique of Visualisation
 
-## Clarity
+### Clarity
 
 1. **Uninformed Title:** The title of the original graph “Merchandise Trade of Top Six Trading Countries, 2019-2020” does not indicate what the visualization is intended to do. It is quite vague to say what message this graph trying to emphasize. Does it highlight the differences between imports and exports value within 6 countries or does it compare merchandise trading trends of these countries? An unclear title makes it difficult for the audience to catch the key message quickly. 
 
@@ -39,11 +39,11 @@ The graph presented the merchandise imports and exports of 6 different countries
 6. **No Annotation:** Annotation that helps to tell the data story is not used in the original graph.
 
 
-## Aesthetic
+### Aesthetic
 
 1. **Invisible Tick Mark:** Tick marks are necessary on a continuous scale. They help to mark the major divisions and show the exact point on the axis. The colour of tick marks on the original is too light and makes them invisible and unhelpful. 
 
-2. **Poor colour choice:** Imports and Exports are displayed using two different colours in the original graph. However, both colours are too light hence they do not contrast sufficiently with each other. Using brighter colours will improve the aesthetics of the visualization. 
+2. **Poor color choice:** Imports and Exports are displayed using two different colours in the original graph. However, both colours are too light hence they do not contrast sufficiently with each other. Using brighter colors will improve the aesthetics of the visualization. 
 
 3. **Separated graphs:** Merchandise trades of these countries are presented in 6 separate graphs. 6 graphs are too much to be showed on one dashboard; this makes the whole visualization ununited and scattered. To improve the aesthetics, data should be presented with a smaller number of separated graphs.
 
@@ -51,7 +51,29 @@ The graph presented the merchandise imports and exports of 6 different countries
 
 
 
-# 2.0 Installing and Launching R Packages
+# Part B: Alternative Design
+
+The proposed alternative visualization design is displayed below:
+
+![](img/image02.jpg)
+
+## Advantages of the new design: 
+
+### Clarity
+
+1. **Clear titles** are provided to indicate the purpose of the graphs and help audiences to catch the key information quickly.
+2. **Consistency of the units and labels** for the x-axis and y-axis. This would make avoid the misleading display of the data provided.
+3. Display trading data in a quarter unit would **display smaller changes** that cannot be found in the original graph.
+4. **Better graph formats** are adopted to deliver the data in a better and clearer way. 
+5. **Annotation** will be added to help to tell the data story.
+
+### Aesthetic
+
+1. **Tick marks** can be seen by the audiences and help them to identify the divisions on the axis.
+2. **Legends can be replaced by direct labels**. This makes it easier for the audience to read and also enhance the tidiness of the visualization
+3. **Fewer graphs** are presented on one dashboard. Information is united and the display of the dashboard would be more organized.
+4. **Contrasting colors** are used to help to deliver the information and improve the aesthetic design of the visualization. 
+
 
 Before you get started, you are required:
 
