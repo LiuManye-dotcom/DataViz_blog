@@ -16,7 +16,12 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# 1.0 Overview
+# Original Data Visualization
+
+The original data visualization looks like the graph presented below:
+![](img/image01.jpg)
+The graph presented the merchandise imports and exports of 6 different countries between 2019 to 2020. Six countries included should be the top six trading countries that have the greatest trading values. 
+
 
 In this article, we will show you how to plot a figure with multiple histograms by using [**ggplot2**](https://ggplot2.tidyverse.org/) and **ggpubr** packages. 
 
@@ -29,7 +34,6 @@ Before you get started, you are required:
     * to create a new R Markdown document.
     
 Figure below shows the quadrat plot of Tableau.
-![](img/image01.jpg)
 image 2 below
 ![](img/image02.jpg)
 
