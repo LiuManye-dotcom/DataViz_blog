@@ -89,20 +89,39 @@ After downloading data from the Department of Statistics, Singapore (DOS), we ca
 ## Data Preparation
 Reorganizing the data by using Excel for further use. All the steps displayed below should be operated in both T1 and T2 sheets that contain Imports and Exports trading data separately.
 
-**Step 1:** Delete unnecessary rows in the original datasheet.
+* **Step 1:** Delete unnecessary rows in the original datasheet.
+<center>
 ![](img/image03.jpg){width=50%}
+<center>
 
 
-**Step 2:** Rename undesired data
+* **Step 2:** Rename undesired data
 Since this DataViz Makeover will only focus on the merchandise trade of the top 6 countries (Mainland China, Malaysia, United States. Taiwan, Japan, and Hong Kong) from the beginning of 2019 to the end of 2020, undesired data should be removed until the sheets look like the image below:
 ![](img/image04.jpg)
 
 
-**Step 3:** Reorganizing data in a new sheet
+* **Step 3:** Reorganizing data in a new sheet
 Tableau recognizes variables by column. Because of this feature, the original data needs to be reorganized. First of all, we need to create a new worksheet named 'Data' in the original excel file.  Add new headers in the Datasheet. There will be in total 4 variables and we should name them “Country”, “Time”, “Imports (K)”, and “Exports (K)”. “K” in the header stands for Thousand Dollars.
 Copy data from the original sheets and paste them into Data under corresponding headers. Remember to select the Transpose option while pasting.
 In order to let Tableau recognizes the "Time" variable as Date, we need to make sure data under the Time header is in the format of Date.
+<center>
 ![](img/image05.jpg){width=50%}
+<center>
 
-**Step 4:** Delete undesired sheets
+
+* **Step 4:** Delete undesired sheets
 Delete Content, T1, and T2 from the file. Only the sheet 'Data' should be kept.
+
+
+## Importing Data into Tableau
+
+* **Step 1:** Open Excel file in Tableau
+After open Tableau, select File from panel above to open the file we prepared:
+
+
+* **Step 2:** Change the data type
+Making sure all the variables are in the correct data types.
+‘Country’ should be a string format, recognized as Geographic role in Country. ‘Time’ should be recognized as Date. Exports (K) and Imports (K) should in the format of Number (whole).
+<center>
+![](img/image07.jpg){width=50%}
+<center>
