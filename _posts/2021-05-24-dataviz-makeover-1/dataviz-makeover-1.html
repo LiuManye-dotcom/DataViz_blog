@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","img/image01.jpg","img/image02.jpg"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","img/image01.jpg","img/image02.jpg","img/image03.jpg","img/image04.jpg","img/image05.jpg","img/image06.jpg","img/image07.jpg","img/image08.jpg","img/image09.jpg","img/image10.jpg","img/image11.jpg","img/image12.jpg","img/image13.jpg","img/image14.jpg","img/image15.jpg","img/image16.jpg","img/image17.jpg","img/image18.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1515,8 +1515,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><strong>Fewer graphs</strong> are presented on one dashboard. Information is united and the display of the dashboard would be more organized.</li>
 <li><strong>Contrasting colors</strong> are used to help to deliver the information and improve the aesthetic design of the visualization.</li>
 </ol>
-<h2 id="part-c-proposed-visualisation">Part C: Proposed Visualisation</h2>
+<h1 id="part-c-proposed-visualisation">Part C: Proposed Visualisation</h1>
 <p>Please view the interactive visualization on Tableau Public <a href="https://public.tableau.com/app/profile/manye.liu/viz/DataVisualization_16223090271340/Finallook"><strong>here</strong></a></p>
+<h1 id="part-d-step-by-step-guide">Part D: Step-by-step Guide</h1>
+<p>After downloading data from the Department of Statistics, Singapore (DOS), we can prepare the proposed alternative data visualization step-by-step.</p>
+<h2 id="data-preparation">Data Preparation</h2>
+<p>Reorganizing the data by using Excel for further use. All the steps displayed below should be operated in both T1 and T2 sheets that contain Imports and Exports trading data separately.</p>
+<p><strong>Step 1:</strong> Delete unnecessary rows in the original datasheet. <img src="img/image03.jpg" style="width:50.0%" /></p>
+<p><strong>Step 2:</strong> Rename undesired data Since this DataViz Makeover will only focus on the merchandise trade of the top 6 countries (Mainland China, Malaysia, United States. Taiwan, Japan, and Hong Kong) from the beginning of 2019 to the end of 2020, undesired data should be removed until the sheets look like the image below: <img src="img/image04.jpg" /></p>
+<p><strong>Step 3:</strong> Reorganizing data in a new sheet Tableau recognizes variables by column. Because of this feature, the original data needs to be reorganized. First of all, we need to create a new worksheet named ‘Data’ in the original excel file. Add new headers in the Datasheet. There will be in total 4 variables and we should name them “Country”, “Time”, “Imports (K)”, and “Exports (K)”. “K” in the header stands for Thousand Dollars. Copy data from the original sheets and paste them into Data under corresponding headers. Remember to select the Transpose option while pasting. In order to let Tableau recognizes the “Time” variable as Date, we need to make sure data under the Time header is in the format of Date. <img src="img/image05.jpg" style="width:50.0%" /></p>
+<p><strong>Step 4:</strong> Delete undesired sheets Delete Content, T1, and T2 from the file. Only the sheet ‘Data’ should be kept.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

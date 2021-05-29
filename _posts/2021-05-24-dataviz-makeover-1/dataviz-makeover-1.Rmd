@@ -22,6 +22,7 @@ The original data visualization looks like the graph presented below:
 ![](img/image01.jpg)
 The graph presented the merchandise imports and exports of 6 different countries between 2019 to 2020. Six countries included should be the top six trading countries that have the greatest trading values. 
 
+
 # Part A: Critique of Visualisation
 
 ### Clarity
@@ -75,7 +76,33 @@ The proposed alternative visualization design is displayed below:
 4. **Contrasting colors** are used to help to deliver the information and improve the aesthetic design of the visualization. 
 
 
-## Part C: Proposed Visualisation
+
+# Part C: Proposed Visualisation
 
 Please view the interactive visualization on Tableau Public [**here**](https://public.tableau.com/app/profile/manye.liu/viz/DataVisualization_16223090271340/Finallook)
 
+
+
+# Part D: Step-by-step Guide
+After downloading data from the Department of Statistics, Singapore (DOS), we can prepare the proposed alternative data visualization step-by-step.
+
+## Data Preparation
+Reorganizing the data by using Excel for further use. All the steps displayed below should be operated in both T1 and T2 sheets that contain Imports and Exports trading data separately.
+
+**Step 1:** Delete unnecessary rows in the original datasheet.
+![](img/image03.jpg){width=50%}
+
+
+**Step 2:** Rename undesired data
+Since this DataViz Makeover will only focus on the merchandise trade of the top 6 countries (Mainland China, Malaysia, United States. Taiwan, Japan, and Hong Kong) from the beginning of 2019 to the end of 2020, undesired data should be removed until the sheets look like the image below:
+![](img/image04.jpg)
+
+
+**Step 3:** Reorganizing data in a new sheet
+Tableau recognizes variables by column. Because of this feature, the original data needs to be reorganized. First of all, we need to create a new worksheet named 'Data' in the original excel file.  Add new headers in the Datasheet. There will be in total 4 variables and we should name them “Country”, “Time”, “Imports (K)”, and “Exports (K)”. “K” in the header stands for Thousand Dollars.
+Copy data from the original sheets and paste them into Data under corresponding headers. Remember to select the Transpose option while pasting.
+In order to let Tableau recognizes the "Time" variable as Date, we need to make sure data under the Time header is in the format of Date.
+![](img/image05.jpg){width=50%}
+
+**Step 4:** Delete undesired sheets
+Delete Content, T1, and T2 from the file. Only the sheet 'Data' should be kept.
