@@ -1,0 +1,21 @@
+---
+title: "DataViz-Makeover-2"
+description: |
+  Explore different perspectives and approaches to design more truthful and enlightening data visualisation
+author:
+  - name: Liu Manye
+    url: {}
+date: 06-09-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Original Data Visualization
+
+
