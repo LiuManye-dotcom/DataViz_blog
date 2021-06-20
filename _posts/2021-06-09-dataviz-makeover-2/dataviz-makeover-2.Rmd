@@ -86,6 +86,55 @@ The proposed alternative visualization design is displayed below:
 Please view the interactive visualization on Tableau Public [**here**](https://public.tableau.com/app/profile/manye.liu/viz/FinalVisualization_16241799600890/Dashboard)
 
 
+## Part D: Step-by-step Guide
+After downloading data from the Department of Statistics, Singapore (DOS), the instruction below will illustrate how can we prepare the proposed alternative data visualization step-by-step.
+
+### Data Preparation
+Unzip the output folder downloaded from the website. Reorganizing the data by using Excel and Tableau for further use. All the steps below should be operated for both T1 and T2 sheets that contain Imports and Exports trading data separately.
+
+* **Step 1:** Delete unnecessary rows and content sheets in the original file for the convenience of future operations. Since this DataViz Makeover will only focus on top trading partners that are included in the original visualization (Mainland China, Malaysia, Indonesia, United States. Taiwan, Japan, Hong Kong, EU, Republic of Korea, and Thailand). The study period is set to be between January 2011 to December 2020. We can high-lighted the data of the desired partners and remove the undesired data. The cleaned data looks like the image below: 
+
+<center>
+![](img/image03.jpg){width=70%}
+<center>
+
+
+* **Step 2:** Select all the remaining data in T1 and T2 and paste them in newly created datasheets named ‘Imports’ and ‘Exports’. Select the Transpose option while pasting. In this way, we can have the exports and imports value of each trading partner presented separately.
+
+<center>
+![](img/image04.jpg){width=50%}
+
+
+* **Step 3:** In the original dataset, European Union has different units (Million Dollars) from the other trading partners (Thousand Dollars). To make it easier for audiences to read the data visualization that will be created, I decided to unify the measuring unit for all trading partners to Million Dollars. To do this, I recalculate the value for every trading partner except the EU by dividing the original value over 1000 and then replace the old imports/exports value with the new ones. 
+
+<center>
+![](img/image05.jpg){width=50%}
+
+
+* **Step 4:** Save the cleaned excel file and open it in Tableau. Drag ‘Imports’ in the main pane. Select every variable except ‘Variables’, right-click and select Pivot. Two Pivot Field variables that contain trading partners and Import value will be generated.
+
+<center>
+![](img/image06.jpg){width=70%}
+
+
+* **Step 5:** Right-click the newly created pivot variable that contains trading partner data and select ‘split’. A new variable will be generated which contains the trading partner’s information only. “(Million Dollars)” that shows repeatedly in every cell will be removed. 
+
+<center>
+![](img/image07.jpg){width=70%}
+
+
+* **Step 6:** Hide the variable that contains both trading partner information and measure unit. Set the three remaining variables into the correct data format. The original “Variables” is renamed as “Time” and set in Date format. The newly split variable is renamed as “Trading Partners” and plays as Country/Region. The last pivot variable is renamed as “Imports” and set into a Number (decimal) data format. Maximize the number of rows presented to ensure all instances in the dataset can be seen in Tableau.
+
+<center>
+![](img/image08.jpg){width=70%}
+
+
+* **Step 7:** Repeat steps 4 to 6 for the Exports dataset. Copy the values for 4 variables “Time”, “Trading Partners”, “Imports”, and “Exports”. Paste these four variables in a newly created excel sheet called **Final Data**.
+
+<center>
+![](img/image09.jpg){width=70%}
+
+
 
 
 

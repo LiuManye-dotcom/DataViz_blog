@@ -1533,6 +1533,46 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ol>
 <h2 id="part-c-proposed-visualisation">Part C: Proposed Visualisation</h2>
 <p>Please view the interactive visualization on Tableau Public <a href="https://public.tableau.com/app/profile/manye.liu/viz/FinalVisualization_16241799600890/Dashboard"><strong>here</strong></a></p>
+<h2 id="part-d-step-by-step-guide">Part D: Step-by-step Guide</h2>
+<p>After downloading data from the Department of Statistics, Singapore (DOS), the instruction below will illustrate how can we prepare the proposed alternative data visualization step-by-step.</p>
+<h3 id="data-preparation">Data Preparation</h3>
+<p>Unzip the output folder downloaded from the website. Reorganizing the data by using Excel and Tableau for further use. All the steps below should be operated for both T1 and T2 sheets that contain Imports and Exports trading data separately.</p>
+<ul>
+<li><strong>Step 1:</strong> Delete unnecessary rows and content sheets in the original file for the convenience of future operations. Since this DataViz Makeover will only focus on top trading partners that are included in the original visualization (Mainland China, Malaysia, Indonesia, United States. Taiwan, Japan, Hong Kong, EU, Republic of Korea, and Thailand). The study period is set to be between January 2011 to December 2020. We can high-lighted the data of the desired partners and remove the undesired data. The cleaned data looks like the image below:</li>
+</ul>
+<center>
+<img src="img/image03.jpg" style="width:70.0%" />
+<center>
+<ul>
+<li><strong>Step 2:</strong> Select all the remaining data in T1 and T2 and paste them in newly created datasheets named ‘Imports’ and ‘Exports’. Select the Transpose option while pasting. In this way, we can have the exports and imports value of each trading partner presented separately.</li>
+</ul>
+<center>
+<p><img src="img/image04.jpg" style="width:50.0%" /></p>
+<ul>
+<li><strong>Step 3:</strong> In the original dataset, European Union has different units (Million Dollars) from the other trading partners (Thousand Dollars). To make it easier for audiences to read the data visualization that will be created, I decided to unify the measuring unit for all trading partners to Million Dollars. To do this, I recalculate the value for every trading partner except the EU by dividing the original value over 1000 and then replace the old imports/exports value with the new ones.</li>
+</ul>
+<center>
+<p><img src="img/image05.jpg" style="width:50.0%" /></p>
+<ul>
+<li><strong>Step 4:</strong> Save the cleaned excel file and open it in Tableau. Drag ‘Imports’ in the main pane. Select every variable except ‘Variables’, right-click and select Pivot. Two Pivot Field variables that contain trading partners and Import value will be generated.</li>
+</ul>
+<center>
+<p><img src="img/image06.jpg" style="width:70.0%" /></p>
+<ul>
+<li><strong>Step 5:</strong> Right-click the newly created pivot variable that contains trading partner data and select ‘split’. A new variable will be generated which contains the trading partner’s information only. “(Million Dollars)” that shows repeatedly in every cell will be removed.</li>
+</ul>
+<center>
+<p><img src="img/image07.jpg" style="width:70.0%" /></p>
+<ul>
+<li><strong>Step 6:</strong> Hide the variable that contains both trading partner information and measure unit. Set the three remaining variables into the correct data format. The original “Variables” is renamed as “Time” and set in Date format. The newly split variable is renamed as “Trading Partners” and plays as Country/Region. The last pivot variable is renamed as “Imports” and set into a Number (decimal) data format. Maximize the number of rows presented to ensure all instances in the dataset can be seen in Tableau.</li>
+</ul>
+<center>
+<p><img src="img/image08.jpg" style="width:70.0%" /></p>
+<ul>
+<li><strong>Step 7:</strong> Repeat steps 4 to 6 for the Exports dataset. Copy the values for 4 variables “Time”, “Trading Partners”, “Imports”, and “Exports”. Paste these four variables in a newly created excel sheet called <strong>Final Data</strong>.</li>
+</ul>
+<center>
+<p><img src="img/image09.jpg" style="width:70.0%" /></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
