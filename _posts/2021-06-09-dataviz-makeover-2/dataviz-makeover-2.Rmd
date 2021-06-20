@@ -1,7 +1,7 @@
 ---
 title: "DataViz-Makeover-2"
 description: |
-  Explore different perspectives and approaches to design more truthful and enlightening data visualisation
+  The purpose of the DataViz makeover is to improve on the original visualization. 
 author:
   - name: Liu Manye
     url: {}
@@ -18,4 +18,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Original Data Visualization
 
-
+The original data visualization looks like the graph presented below:
+![](img/image01.jpg)
+The graph presented Singapore’s merchandise trade performance with 10 major trading partners in 2020. It is created by using data provided by the Department of Statistics, Singapore (DOS). The data can be download under the sub-section of Merchandise Trade by Region/Market.
