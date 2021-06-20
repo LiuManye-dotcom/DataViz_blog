@@ -44,13 +44,15 @@ The graph presented Singapore’s merchandise trade performance with 10 major tr
 
 ### Aesthetic
 
-1. **Invisible Tick Mark:** Tick marks are necessary on a continuous scale. They help to mark the major divisions and show the exact point on the axis. The colour of tick marks on the original is too light and makes them invisible and unhelpful. 
+1. **Missing Tick Mark:** Tick marks are necessary on a continuous scale. They help to mark the major divisions and show the exact point on the axis. Tick marks are missing for both axes in the original visualization. 
 
-2. **Poor color choice:** Imports and Exports are displayed using two different colours in the original graph. However, both colours are too light hence they do not contrast sufficiently with each other. Using brighter colors will improve the aesthetics of the visualization. 
+2. **Poor color choice:** 
+* **For the bubbles:** The colors of different circles represent different trading partners. However, some colors in the original graph are do not sufficiently contrast with each other. For instance, the colors of Thailand and the EU are almost the same. Red and Green are used at the same time, which is not friendly to color blinder readers. 
+* **For the background:** The light green and blue combination for the background is not a wise choice as light colors with similar tones could be easily ignored by the readers. 
+* **Transparency:** Transparency of the circle should be used to avoid occlusion issue.
 
-3. **Separated graphs:** Merchandise trades of these countries are presented in 6 separate graphs. 6 graphs are too much to be showed on one dashboard; this makes the whole visualization ununited and scattered. To improve the aesthetics, data should be presented with a smaller number of separated graphs.
+3. **Messy Tooltip:** Tooltip for all the circles are always showed in the original visualization. In this way, key information and significant findings cannot be highlighted.
 
-4. **Legend:** A legend is used to indicate different trading types. It could be quite troublesome for audiences to check the legend when they read the graph. A legend should be replaced by a direct label if possible.
 
 
 

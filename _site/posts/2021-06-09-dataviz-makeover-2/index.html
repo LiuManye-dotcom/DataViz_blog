@@ -2118,10 +2118,16 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <h3 id="aesthetic">Aesthetic</h3>
 <ol type="1">
-<li><p><strong>Invisible Tick Mark:</strong> Tick marks are necessary on a continuous scale. They help to mark the major divisions and show the exact point on the axis. The colour of tick marks on the original is too light and makes them invisible and unhelpful.</p></li>
-<li><p><strong>Poor color choice:</strong> Imports and Exports are displayed using two different colours in the original graph. However, both colours are too light hence they do not contrast sufficiently with each other. Using brighter colors will improve the aesthetics of the visualization.</p></li>
-<li><p><strong>Separated graphs:</strong> Merchandise trades of these countries are presented in 6 separate graphs. 6 graphs are too much to be showed on one dashboard; this makes the whole visualization ununited and scattered. To improve the aesthetics, data should be presented with a smaller number of separated graphs.</p></li>
-<li><p><strong>Legend:</strong> A legend is used to indicate different trading types. It could be quite troublesome for audiences to check the legend when they read the graph. A legend should be replaced by a direct label if possible.</p></li>
+<li><p><strong>Missing Tick Mark:</strong> Tick marks are necessary on a continuous scale. They help to mark the major divisions and show the exact point on the axis. Tick marks are missing for both axes in the original visualization.</p></li>
+<li><p><strong>Poor color choice:</strong></p></li>
+</ol>
+<ul>
+<li><strong>For the bubbles:</strong> The colors of different circles represent different trading partners. However, some colors in the original graph are do not sufficiently contrast with each other. For instance, the colors of Thailand and the EU are almost the same. Red and Green are used at the same time, which is not friendly to color blinder readers.</li>
+<li><strong>For the background:</strong> The light green and blue combination for the background is not a wise choice as light colors with similar tones could be easily ignored by the readers.</li>
+<li><strong>Transparency:</strong> Transparency of the circle should be used to avoid occlusion issue.</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Messy Tooltip:</strong> Tooltip for all the circles are always showed in the original visualization. In this way, key information and significant findings cannot be highlighted.</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
