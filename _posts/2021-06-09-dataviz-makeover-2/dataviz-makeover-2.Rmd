@@ -311,3 +311,24 @@ Click on Color under the Marks pane to set the Opacity to 70% to avoid occlusion
 
 
 
+### Combining worksheets into a Dashboard
+
+Create a new dashboard and drag ‘Interactive Bubble Plot’ and ‘Interactive Balance trade graph’ in. 
+Select one of the Time filters and set these two worksheets using this data source by following the instruction shown below:
+![](img/image41.jpg){width=70%}
+
+Add ‘Motion Graph’ and ‘interactive bar-line graph’ in the same dashboard but different filters are used for these two worksheets.
+
+Final look of the dashboard:
+![](img/image43.jpg)
+
+
+
+
+
+
+
+
+
+
+
