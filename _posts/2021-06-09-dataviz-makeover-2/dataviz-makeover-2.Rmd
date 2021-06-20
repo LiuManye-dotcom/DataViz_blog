@@ -94,45 +94,172 @@ Unzip the output folder downloaded from the website. Reorganizing the data by us
 
 * **Step 1:** Delete unnecessary rows and content sheets in the original file for the convenience of future operations. Since this DataViz Makeover will only focus on top trading partners that are included in the original visualization (Mainland China, Malaysia, Indonesia, United States. Taiwan, Japan, Hong Kong, EU, Republic of Korea, and Thailand). The study period is set to be between January 2011 to December 2020. We can high-lighted the data of the desired partners and remove the undesired data. The cleaned data looks like the image below: 
 
-<center>
 ![](img/image03.jpg){width=70%}
-<center>
+
 
 
 * **Step 2:** Select all the remaining data in T1 and T2 and paste them in newly created datasheets named ‘Imports’ and ‘Exports’. Select the Transpose option while pasting. In this way, we can have the exports and imports value of each trading partner presented separately.
 
-<center>
 ![](img/image04.jpg){width=50%}
 
 
 * **Step 3:** In the original dataset, European Union has different units (Million Dollars) from the other trading partners (Thousand Dollars). To make it easier for audiences to read the data visualization that will be created, I decided to unify the measuring unit for all trading partners to Million Dollars. To do this, I recalculate the value for every trading partner except the EU by dividing the original value over 1000 and then replace the old imports/exports value with the new ones. 
 
-<center>
 ![](img/image05.jpg){width=50%}
 
 
 * **Step 4:** Save the cleaned excel file and open it in Tableau. Drag ‘Imports’ in the main pane. Select every variable except ‘Variables’, right-click and select Pivot. Two Pivot Field variables that contain trading partners and Import value will be generated.
 
-<center>
 ![](img/image06.jpg){width=70%}
 
 
 * **Step 5:** Right-click the newly created pivot variable that contains trading partner data and select ‘split’. A new variable will be generated which contains the trading partner’s information only. “(Million Dollars)” that shows repeatedly in every cell will be removed. 
 
-<center>
 ![](img/image07.jpg){width=70%}
 
 
 * **Step 6:** Hide the variable that contains both trading partner information and measure unit. Set the three remaining variables into the correct data format. The original “Variables” is renamed as “Time” and set in Date format. The newly split variable is renamed as “Trading Partners” and plays as Country/Region. The last pivot variable is renamed as “Imports” and set into a Number (decimal) data format. Maximize the number of rows presented to ensure all instances in the dataset can be seen in Tableau.
 
-<center>
 ![](img/image08.jpg){width=70%}
 
 
 * **Step 7:** Repeat steps 4 to 6 for the Exports dataset. Copy the values for 4 variables “Time”, “Trading Partners”, “Imports”, and “Exports”. Paste these four variables in a newly created excel sheet called **Final Data**.
 
-<center>
 ![](img/image09.jpg){width=70%}
+
+
+
+### Creating Worksheets
+There are four charts will be created in this DataViz Makeover. Each chart will help the audience to analyze the providing data differently.
+
+#### First Chart:
+
+* **Step 1** Open the Excel file that we previously prepared in Tableau. Drag Final Data into the main pane and make sure every variable is in the right data format. The dataset should look like the image displayed below: 
+ 
+![](img/image10.jpg){width=70%}
+
+
+* **Step 2:** Add two new calculated variables in Tableau that represents Singapore’s Balance of Trade and total merchandise trading value with each trading partner.
+Get into the worksheet window, select Analysis > Create Calculated Field. Creating the formula of **Total Trade Value (Million Dollars)** by dragging the existed variables into the newly opened window to form the equation below: 
+
+![](img/image11.jpg){width=70%}
+
+
+Get into the worksheet window, select Analysis > Create Calculated Field. Creating the formula of Balance of Trade (Million Dollars) by dragging the existed variables into the newly opened window to form the equation below: 
+
+![](img/image12.jpg){width=70%}
+
+
+Then we can find a new variable on the left side panel.
+
+
+* **Step 3:** Create a new worksheet and name it ‘Interactive Bubble Plot’. Drag ‘Total Trade Value’ to Columns and ‘Balance of Trade’ to Rows.
+
+![](img/image13.jpg){width=50%}
+
+
+* **Step 4:** Under ‘Marks’ Pane, select ‘Circle’ from the dropdown list. Drag ‘Trading Partners’ to Detail so that we can have one circle represent each trading partner on the chart. Drag ‘Total Trade Value’ to Size and drag ‘Balance of Trade’ to Color. In this way, we can have the size of each circle representing the total merchandise trading volume of each trading partner and the color of each circle representing its balance of trade with Singapore.
+
+![](img/image14.jpg){width=50%}
+
+
+* **Step 5:** Double-click on the color legends on the right side of the worksheet to edit the color setting. Select Red-Blue-White Diverging from the dropdown list. In this way, circles will be displayed in red if the value of import for a particular trading partner exceeds its exports, and blue otherwise. Tick the box of ‘Use Full-Color Range’ to ensure the color presentation of the chart is rich enough and is significantly in contrast with each other and the background. Click <<Advanced bottom to lock the Center to 0. 
+Click on Color under the Marks pane to set the Opacity to 70% to avoid occlusion issues. Set the Border to white color so that the border of each circle is clearer.
+
+![](img/image15.jpg){width=70%}
+
+
+* **Step 6:** Click on Size under Marks pane and adjust the size of circles.
+
+![](img/image16.jpg){width=70%}
+
+
+* **Step 7:** Drag ‘Trading Partners’ and ‘Balance of Trade’ into Label under Marks pane. Click on Label to edit the label set. Change the Alignment to ‘Middle Center’. Change the marks to label from ‘All’ to ‘Min/Max’. Set the Field to ‘Sum(Balance of Trade)’ and tick both boxes before label maximum value and label minimum value.
+
+![](img/image17.jpg){width=70%}
+
+
+* **Step 8:** Right-click on the y-axis to add Reference Line. Set the line at a constant value of 0. Change the format of the reference line into a dotted line and set the color to light red.
+
+![](img/image18.jpg){width=70%}
+
+
+* **Step 9:** Drag ‘Time’ into Filters pane. Select ‘Show Filter’ from the dropdown list so that the filter can be seen on the right side of the worksheet. Change the filter list to a form of ‘Single Value (list)’, click on ‘Edit Title’ and rename the filter to ‘Select Year’. Click on customize and untick the box before ‘Show “All” Value’.
+
+![](img/image19.jpg){width=70%}
+
+
+* **Step 10:** Select Analysis > Create Calculated Field. Creating the formulas of Net Exports (Million Dollars) and Net Imports as the image displayed below:
+
+![](img/image20.jpg){width=70%}
+
+
+* **Step 11:** Drag ‘Net Exports’ and ‘Net Imports’ to Tooltip under Marks pane. Double-click on Tooltip to edit the text of the tooltip as the image displayed below.
+
+![](img/image21.jpg){width=70%}
+
+
+* **Step 12:** Edit Title of this chart by typing “Merchandise Total Trade Value and Trade Balance of Top Trading Partners”. Click ‘Insert’ and choose ‘YEAR(Time)’ from the dropdown list. The font size is set to be 15 and bold.
+
+![](img/image22.jpg){width=70%}
+
+
+* **Step 13:** Formatting the tick marks on the axes into a darker black. Thick mark help to show the exact point on the axis.
+
+![](img/image23.jpg){width=70%}
+
+
+* **Step 14:** Hide the Color and Size legends in the worksheet since they are not very informative for the readers.
+
+
+#### Second Chart:
+
+* **Step 1:** Duplicate the first worksheet that we have created and name it ‘Motion Graph’.
+
+![](img/image24.jpg){width=70%}
+
+
+* **Step 2:** Remove ‘Time’ from the Filters pane and drag ‘Trading Partners’ into it. Select ‘Show Filter’ from the dropdown list so that the filter can be seen on the right side of the worksheet. Keep the setting of ‘Multiple Values (list)’, click on ‘Edit Title’ and rename the filter to ‘Select Trading Partners’.
+
+![](img/image25.jpg){width=70%}
+
+
+* **Step 3:** Drag ‘Time’ into the Pages pane and we can see the motion play card on the right side of the worksheet. Select Format > Animation, turn on the animation setting, and change the duration of play to 1.00 seconds (Slow).
+
+![](img/image26.jpg){width=70%}
+
+
+* **Step 4:** Edit Title as the image shown below. Click ‘Insert’ and choose ‘Trading Partners’ from the dropdown list. The font size is set to be 15 and bold.
+
+![](img/image27.jpg){width=70%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
