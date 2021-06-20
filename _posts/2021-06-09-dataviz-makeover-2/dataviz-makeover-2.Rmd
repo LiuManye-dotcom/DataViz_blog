@@ -160,7 +160,7 @@ Then we can find a new variable on the left side panel.
 
 * **Step 4:** Under ‘Marks’ Pane, select ‘Circle’ from the dropdown list. Drag ‘Trading Partners’ to Detail so that we can have one circle represent each trading partner on the chart. Drag ‘Total Trade Value’ to Size and drag ‘Balance of Trade’ to Color. In this way, we can have the size of each circle representing the total merchandise trading volume of each trading partner and the color of each circle representing its balance of trade with Singapore.
 
-![](img/image14.jpg){width=50%}
+![](img/image14.jpg){width=30%}
 
 
 * **Step 5:** Double-click on the color legends on the right side of the worksheet to edit the color setting. Select Red-Blue-White Diverging from the dropdown list. In this way, circles will be displayed in red if the value of import for a particular trading partner exceeds its exports, and blue otherwise. Tick the box of ‘Use Full-Color Range’ to ensure the color presentation of the chart is rich enough and is significantly in contrast with each other and the background. Click <<Advanced bottom to lock the Center to 0. 
@@ -171,17 +171,17 @@ Click on Color under the Marks pane to set the Opacity to 70% to avoid occlusion
 
 * **Step 6:** Click on Size under Marks pane and adjust the size of circles.
 
-![](img/image16.jpg){width=70%}
+![](img/image16.jpg){width=40%}
 
 
 * **Step 7:** Drag ‘Trading Partners’ and ‘Balance of Trade’ into Label under Marks pane. Click on Label to edit the label set. Change the Alignment to ‘Middle Center’. Change the marks to label from ‘All’ to ‘Min/Max’. Set the Field to ‘Sum(Balance of Trade)’ and tick both boxes before label maximum value and label minimum value.
 
-![](img/image17.jpg){width=70%}
+![](img/image17.jpg){width=50%}
 
 
 * **Step 8:** Right-click on the y-axis to add Reference Line. Set the line at a constant value of 0. Change the format of the reference line into a dotted line and set the color to light red.
 
-![](img/image18.jpg){width=70%}
+![](img/image18.jpg){width=50%}
 
 
 * **Step 9:** Drag ‘Time’ into Filters pane. Select ‘Show Filter’ from the dropdown list so that the filter can be seen on the right side of the worksheet. Change the filter list to a form of ‘Single Value (list)’, click on ‘Edit Title’ and rename the filter to ‘Select Year’. Click on customize and untick the box before ‘Show “All” Value’.
@@ -206,7 +206,7 @@ Click on Color under the Marks pane to set the Opacity to 70% to avoid occlusion
 
 * **Step 13:** Formatting the tick marks on the axes into a darker black. Thick mark help to show the exact point on the axis.
 
-![](img/image23.jpg){width=70%}
+![](img/image23.jpg){width=50%}
 
 
 * **Step 14:** Hide the Color and Size legends in the worksheet since they are not very informative for the readers.
@@ -216,7 +216,7 @@ Click on Color under the Marks pane to set the Opacity to 70% to avoid occlusion
 
 * **Step 1:** Duplicate the first worksheet that we have created and name it ‘Motion Graph’.
 
-![](img/image24.jpg){width=70%}
+![](img/image24.jpg){width=50%}
 
 
 * **Step 2:** Remove ‘Time’ from the Filters pane and drag ‘Trading Partners’ into it. Select ‘Show Filter’ from the dropdown list so that the filter can be seen on the right side of the worksheet. Keep the setting of ‘Multiple Values (list)’, click on ‘Edit Title’ and rename the filter to ‘Select Trading Partners’.
@@ -234,34 +234,80 @@ Click on Color under the Marks pane to set the Opacity to 70% to avoid occlusion
 ![](img/image27.jpg){width=70%}
 
 
+#### Third Chart:
+
+* **Step 1:** Create a new worksheet and name it ‘interactive bar-line graph’. Drag ‘Year(Time)’ to Columns and ‘Total Trade Value’ and ‘Balance of Trade’ to Rows.
+
+![](img/image28.jpg){width=70%}
+
+
+* **Step 2:** Under Marks pane, select ‘Bar’ from the dropdown list for ‘Total Trade Value’ and select ‘Line’ for ‘Balance of Trade’.
+
+![](img/image29.jpg){width=50%}
+
+
+* **Step 3:** Drag ‘Balance of Trade’ into Color under the Balance of Trade section in the Marks pane. Double-click on the color legends on the right side of the worksheet to edit the color setting. Select Red-Blue-White Diverging from the dropdown list. In this way, circles will be displayed in red if the value of import for a particular trading partner exceeds its exports, and blue otherwise. Tick the box of ‘Use Full Color Range’ to ensure the color presentation of the chart is rich enough to sufficiently contrast with the bar chart of ‘Total Trade Value’. Click <<Advanced bottom to lock the Center to 0. Click ‘Color’ under the Total Trade Value section and set the color of bars to light yellow.
+
+![](img/image30.jpg){width=70%}
+
+
+* **Step 4:** Drag ‘Trading Partners’ into Filters pane. Select ‘Show Filter’ from the dropdown list so that the filter can be seen on the right side of the worksheet. Change the filter list to a form of ‘Single Value (list)’, click on ‘Edit Title’ and rename the filter to ‘Select Trading Partners’.
+
+![](img/image31.jpg){width=70%}
+
+
+* **Step 5:** Right-click on one of the y-axes and select ‘Synchronize Axis’. Choose ‘Format’ to set the color of the dual-axis title into a matching color and set the color of the Tick Marks into a darker one.
+
+![](img/image32.jpg){width=30%}
+
+
+* **Step 6:** Hide legends from Readers since they are not very informative. 
+
+
+* **Step 7:** Edit Title of this chart ‘Merchandise Trading Patterns of Top 6 Countries (2019-2020)’. The font size is set to be 15 and bold.
+
+![](img/image33.jpg){width=50%}
 
 
 
+#### Fourth Chart:
+
+* **Step 1:** Create a new worksheet and name it ‘Interactive Balance trade graph’. Drag ‘Trading Partners’ to Columns and ‘Imports’ and ‘Measure Values’ as a dual to Rows. ‘Measure Values’ should include ‘Imports’ and ‘Exports’ only.
+
+![](img/image34.jpg){width=70%}
 
 
+* **Step 2:** Under Marks pane, select ‘Gantt Bar’ from the dropdown list for ‘Imports’ and select ‘Circle’ for ‘Measure Values’.
+
+![](img/image35.jpg){width=50%}
 
 
+* **Step 3:** Drag ‘Balance of Trade’ into Color and Size under the Imports section under Marks pane. Double-click on the color legends on the right side of the worksheet to edit the color setting. Select Red-Blue-White Diverging from the dropdown list. In this way, Gantt bars will be displayed in red if the value of import for a particular trading partner exceeds its exports, and blue otherwise. Tick the box of ‘Use Full Color Range’ to ensure the color presentation of the chart is rich enough. Set Opacity of the color to 40%.
+
+![](img/image36.jpg){width=70%}
 
 
+* **Step 4:** To match the overall color theme of Balance of Trade, I change the color of ‘Exports’ to Blue and the color of ‘Imports’ to Red.
+
+![](img/image37.jpg){width=30%}
 
 
+* **Step 5:** Drag ‘Time’ into Filters pane. Select ‘Show Filter’ from the dropdown list so that the filter can be seen on the right side of the worksheet. Change the filter list to a form of ‘Single Value (list)’, click on ‘Edit Title’ and rename the filter to ‘Select Year’. Click on customize and untick the box before ‘Show “All” Value’.
+
+![](img/image38.jpg){width=70%}
 
 
+* **Step 6:** Right-click on one of the y-axes and select ‘Synchronize Axis’. Choose ‘Format’ to set the color of the Tick Marks into a darker one. Hide the header of the y-axis on the right side and change the title of the other axis into ‘Imports and Exports’.
+
+![](img/image39.jpg){width=30%}
 
 
+* **Step 7:** Hide legends from Readers since they are not very informative. 
 
 
+* **Step 8:** Edit Title of this chart as the image displayed below. The font size is set to be 15 and bold.
 
-
-
-
-
-
-
-
-
-
-
+![](img/image40.jpg){width=70%}
 
 
 
