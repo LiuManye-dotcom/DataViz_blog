@@ -81,7 +81,9 @@ The proposed alternative visualization design is displayed below:
 5. Only important information will be labeled. This also improves the tidiness of the graphs.
 
 
+## Part C: Proposed Visualisation
 
+Please view the interactive visualization on Tableau Public [**here**](https://public.tableau.com/app/profile/manye.liu/viz/FinalVisualization_16241799600890/Dashboard)
 
 
 
