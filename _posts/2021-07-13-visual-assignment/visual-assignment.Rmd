@@ -28,6 +28,7 @@ Using just the credit and loyalty card data, identify the most popular locations
 R is the only tools will be used in this assignment.
 
 Run the code below to complete R option setup:
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(fig.retina=3,
@@ -37,7 +38,9 @@ knitr::opts_chunk$set(fig.retina=3,
                       warning = FALSE)
 ```
 
+
 Install the needed package for this assignment. This code chunk checks if required packages are installed. If they are not installed, the next line of code will install them. The following line is then use to import the library into the current working environment.
+
 ```{r}
 packages = c('igraph', 'tidygraph', 'ggraph', 'visNetwork', 'lubridate', 'clock', 'tidyverse', 'dplyr','raster', 'sf', 'tmap', 'gifski', 'mapview')
 
@@ -52,6 +55,7 @@ library(p, character.only = T)
 ## Import Dataset
 
 **cc_data.csv** and **loyalty_data.csv** are the two datasets required to answer Question 1. I used read_csv to import them in the code chunk below:
+
 ```{r}
 cc <- read_csv("MC2/cc_data.csv")
 loyalty <- read_csv("MC2/loyalty_data.csv")
@@ -62,6 +66,7 @@ glimpse(loyalty)
 ## Data Preparation
 According to the glimpse of the cc data and loyalty data, we can see that timestamps in both file are in a character formate. 
 Run the following code to change datatype of timestamps into a correct datetime format:
+
 ```{r}
 cc$timestamp <- date_time_parse(cc$timestamp,
                 zone = "",
@@ -71,6 +76,7 @@ glimpse(cc)
 ```
 
 There are only date information in the loyalty dataset, hence its format setting is "**%m/%d/%Y**" instead of **%m/%d/%Y %H:%M**
+
 ```{r}
 loyalty$timestamp <- date_time_parse(loyalty$timestamp,
                 zone = "",
@@ -80,6 +86,7 @@ glimpse(loyalty)
 ```
 
 Both table contains date information of GAStech staff's spending behaviour. In order to combine these two seperated table into one, we need to seperate date information in the cc data and create a link between them. Code chunk below will help us to do that.
+
 ```{r}
 cc$Date <- format(cc$timestamp, format="%Y-%m-%d")
 cc$Date <- date_time_parse(cc$Date,
@@ -90,17 +97,19 @@ glimpse(cc)
 ```
 
 After creating the sharing column both table, a full_join verb is used to join cc data and loyalty data together. In the new table, both cases in cc and loyalty will be kept no matter whether an exact match existed or not.
+
 ```{r}
 card_joined <- cc %>%
   full_join(loyalty, by = c("Date" = "timestamp", "location", "price"))
 
 ```
+
 In card_joined, we can get a clearer image of each credit card holders' spending patterns. Including the timestamp, location, price spent, credit card number, and loyal card number.
 In this way, we can see all the existing credit_card and loyalty_card combinations and explore if there is any cross usage of staff's loyalty card in the past half month.
 
-
 filter popular locations for credit card transactions: 
 Code chunk below help use count the number of occurrences of each location and sort them in a descending order. 
+
 ```{r}
 popularLoc_cc <- cc %>%
   group_by(location) %>%
@@ -110,6 +119,7 @@ popularLoc_cc <- cc %>%
 ```
 
 Similar as the previous code chunk, this code chunk will help use to find the popular locations based staffs' loyalty card usage frequency:
+
 ```{r}
 popularLoc_loyalty <- loyalty %>%
   group_by(location) %>%
@@ -119,6 +129,7 @@ popularLoc_loyalty <- loyalty %>%
 ```
 
 PopularLc_cc file contains one more observations than popularLoc_loyalty, which is Daily Dealz. Daily Dealz only appear once, hence it would not impact on our exploration of Q1 answers.
+
 ```{r}
 popularLoc_cc %>%
   anti_join(popularLoc_loyalty, by = c("location"))
@@ -133,6 +144,7 @@ popularLoc_cc %>%
 To illustrate the popular locations that GasTech staffs shop frequently, two bar plots will be drawn below.
 
 Running the code chunk below will create a table that contains the top 6 popular location based on credit card usage information so that we can use it to draw a graph:
+
 ```{r}
 popular_top6_credit <- popularLoc_cc %>%
  
@@ -144,6 +156,7 @@ popular_top6_credit
 
 ```
 Run the code chunk below to draw the bar chart:
+
 ```{r}
 top6Loc_credit<-ggplot(data=popular_top6_credit, aes(x=location, y=count)) +
   geom_bar(stat="identity", fill="steelblue")+
@@ -155,6 +168,7 @@ print(top6Loc_credit + ggtitle("Top 6 Popular Locations Based on Credit Card U`s
 ```
 
 Running the code chunk below to create a table that contains the top 6 popular location based on loyalty card use frequency so that we can use it to draw a graph:
+
 ```{r}
 popular_top6_loyalty <- popularLoc_loyalty %>%
  
@@ -167,6 +181,7 @@ popular_top6_loyalty
 ```
 
 Run the code chunk below to draw the bar chart for popular_top6_loyalty table:
+
 ```{r}
 top6Loc_loyalty<-ggplot(data=popular_top6_loyalty, aes(x=location, y=count)) +
   geom_bar(stat="identity", fill="steelblue")+
@@ -183,6 +198,7 @@ Two popularLoc data shares same top six popular locations, they are: "Katerina's
 ### Popular Time Periods
 
 Create a table contains popular location info only:
+
 ```{r}
 popular_locations <- card_joined %>%
   filter(location %in% c("Katerina's Cafe", "Hippokampos", "Guy's Gyros", "Brew've Been Served", "Ouzeri Elian", "Hallowed Grounds")) %>%
@@ -190,6 +206,7 @@ popular_locations <- card_joined %>%
   dplyr::select(-Date)
 
 ```
+
 According to this table, we can see that Katrina's Cafe, Hippokampos, Guy's Gyros, and Ouzeri Elian are places that sells food, hence these location are popular during the lunch break (12-14 pm.) and dinner time (19-21 pm.).
 On the other hand, Brew've Been Served and Hallowed Grounds mainly sell coffee. They are popular between 7:30 - 8:30 am. only since GasTech staffs only visit there to grab a coffee before working.
 
@@ -199,6 +216,7 @@ To promote local businesses, Kronos based companies provide a Kronos Kares benef
 Since loyalty card is discount card that offered by GasTech is meant to promote business and to collect staffs' spending information, it is abnormal to see cross usage of loyalty card between GasTech staffs. Anomolies like this implies that there is a possible hidden relationship between the owners of loyalty cards that were cross used.
 
 Run the code chunk below to find out credit cards that involves in the anomalies discussed above:
+
 ```{r}
 abnormal_cc <- popular_locations %>%
   drop_na(loyaltynum) %>%
@@ -216,6 +234,7 @@ Add the vehicle data to your analysis of the credit and loyalty card data. How d
 ## Developing path track map 
 
 Importing raster file MC2-tourist.tif into R by using raster() or Raster package.
+
 ```{r}
 bgmap <- raster("MC2/MC2-tourist.tif")
 bgmap
@@ -223,6 +242,7 @@ bgmap
 ```
 
 In the code chunk below, we will use tm_raster() to plot a raster layer by using tmap package.
+
 ```{r}
 tmap_mode("plot")
 tm_shape(bgmap) +
@@ -243,6 +263,7 @@ tm_rgb(bgmap, r = 1,g = 2,b = 3,
 
 Importing Vector GIS Data File:
 Abila GIS data layer is in ESRI shapefile format. Code-chunk below will use st_read() of the sf package to import Abila shapefile into R.
+
 ```{r}
 Abila_st <- st_read(dsn = "MC2/Geospatial",
                     layer = "Abila")
@@ -250,6 +271,7 @@ Abila_st <- st_read(dsn = "MC2/Geospatial",
 ```
 
 Using read_csv() of readr package to import gps2.csv into R.
+
 ```{r}
 gps2 <- read_csv("MC2/gps2.csv")
 glimpse(gps2)
@@ -259,7 +281,9 @@ glimpse(gps2)
 New factor **Time Difference** was previously added into the gps file by using the Timestampe of the next gps record of a particular car id minus the previous Timestampe. After calculating the time differences between each gps records of a car id, present it in a second unit to get **Seconds**.
 In this way, we can get the time interval between a person's movement and using it to predict its spending behaviour in the future exploration.
 
-change datatypes
+Timestamp field is not in the right date-time format.
+Running the code chunk below to change data type:
+
 ```{r}
 gps2$Timestamp <- date_time_parse(gps2$Timestamp,
                 zone = "",
