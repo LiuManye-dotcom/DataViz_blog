@@ -1,7 +1,7 @@
 ---
 title: "DataViz Makeover 1"
 description: |
-  The purpose of the DataViz makeover is to improve on the original visualization. The limitations of the original graph will be pointed out. An alternative data to solve the original issues. 
+  The purpose of the DataViz makeover is to improve on the original visualization.
 author:
   - name: Liu Manye
     url: {}
@@ -214,7 +214,7 @@ The following procedures should be performed to improve the design of the graph:
 The resultant graph is as follows:
 ![](img/image17.jpg)
 
-### Creating Worksheets
+### Creating Dashborad
 To display both worksheets on a single page, we need to create a new dashboard. 
 The final look of the dashboard is presented below:
 ![](img/image19.jpg)
