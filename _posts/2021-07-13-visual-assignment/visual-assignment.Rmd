@@ -231,7 +231,7 @@ abnormal_cc
 
 Add the vehicle data to your analysis of the credit and loyalty card data. How does your assessment of the anomalies in question 1 change based on this new data? What discrepancies between vehicle, credit, and loyalty card data do you find? Please limit your answer to 8 images and 500 words.
 
-## Developing path track map 
+## Importing 
 
 Importing raster file MC2-tourist.tif into R by using raster() or Raster package.
 
@@ -294,11 +294,18 @@ glimpse(gps2)
 
 ```
 
+Code chunk below convers gps data frome into a simple feature data frame by using st_as_sf() of sf packages
+
 ```{r}
 gps_sf <- st_as_sf(gps2, 
                    coords = c("long", "lat"),
                        crs= 4326)
+
+gps_sf
+
 ```
+
+Run the chunk below to split Timestamp in gps_sf file into day, hour and minute factors:
 
 ```{r}
 gps_sf$day <- format(gps_sf$Timestamp, format="%d")
@@ -306,14 +313,17 @@ gps_sf$hour <- format(gps_sf$Timestamp, format="%H")
 gps_sf$minute <- format(gps_sf$Timestamp, format="%M")
 ```
 
-#find out time interval > 5mins
+To avoid meaningless road traffic event or road-driving path, the code below creates a table to find out path records that has time interval > 3mins (180 seconds). In this way we geometry information at the beginning of each travel:
+
 ```{r}
 more_than_3mins <- gps_sf %>%
   filter(Seconds > 180)
 ```
 
 
-Creating Movement Path from GPS Points
+## Creating Movement Path from GPS Points
+Code chunk below joins the gps points into movement paths by using the drivers' IDs as unique identifiers.
+
 ```{r}
 gps_path <- gps_sf %>%
   group_by(id, day, hour) %>%
@@ -322,6 +332,7 @@ gps_path <- gps_sf %>%
   st_cast("LINESTRING")
 ```
 
+Combine gps_path and p into one and eliminate data that cannot be used to draw a line graph:
 
 ```{r}
 p = npts(gps_path, by_feature = TRUE)
@@ -330,7 +341,8 @@ gps_path2 <- cbind(gps_path, p) %>%
 
 ```
 
-# Drawing line graphs
+### Plotting line graphs
+
 ```{r}
 gps_path_selected <- gps_path2 %>%
   filter(id==29, hour == "20")
@@ -345,6 +357,7 @@ tm_shape(bgmap) +
   tm_lines()
 ```
 
+Filtering out observation that seem to present a meaningful start of a trip. Which means it is very likely to see these observations follow a credit card payment.
 
 ```{r}
 gps_dot <- more_than_3mins %>%
@@ -368,8 +381,24 @@ tm_shape(bgmap) +
   tm_dots()
 ```
 
+## Using findings from Q1 to further explore
+Abnormal credit card was found at the end of Q1. 
+Using the line plot and dot plot above to explore the date and time when the abnormal spending behaviour happens to see if there are any abnormal gps movements can be found.
 
-read data
+The investigation result is presented below:
+
+```{r}
+Abnormal_cases <- read_csv("MC2/abnormal_cc.csv")
+
+Abnormal_cases
+
+```
+
+
+# Question 3
+
+## Combine gps and car-assignment data into one
+import car0assignments data into R:
 
 ```{r}
 car <- read_csv("MC2/car-assignments.csv")
@@ -377,7 +406,8 @@ glimpse(car)
 
 ```
 
-Change datatype
+Change datatype:
+
 ```{r}
 car <- car %>%
   drop_na(CarID)
@@ -389,14 +419,18 @@ glimpse(gps2)
 
 ```
 
-join cc data and loyalty data together
+Join car-assignment data and gps data together:
+
 ```{r}
 car_gps <- car %>%
   full_join(gps2, by = c("CarID" = "id"))
 
 ```
 
-edit columns
+Edit columns:
+Combining long and lat column into one and get geometry data.
+Combining FistName and LastName together and get the full name of each staffs.
+
 ```{r}
 car_gps <- st_as_sf(car_gps, 
                    coords = c("long", "lat"),
@@ -406,7 +440,18 @@ car_gps <- car_gps %>%
   unite("Name", FirstName, LastName, sep = " ")
 ```
 
+## Matching gps observations with credit card spending observations
+As I've mentioned before, it is very likely to see the gps observations that occurs after a > 3mins time interval to show up at the location where a credit card purchasing just happened becuase people generally leave a place very soon after pay off their bills.
 
+Following this logic, I used the line paths graph and dot graphs above to find out the moving pattern in a particular day or a particular time, and then match it to a credit card holder that who shares the very similar spending pattern.
+Matching result is presented below:
+
+```{r}
+match_result <- read_csv("MC2/total_match.csv")
+
+match_result
+
+```
 
 
 
