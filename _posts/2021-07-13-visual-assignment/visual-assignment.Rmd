@@ -9,6 +9,8 @@ date: 07-13-2021
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 3
 ---
 
 # Mini Challenge 2 Background
@@ -381,7 +383,7 @@ tm_shape(bgmap) +
   tm_dots()
 ```
 
-## Using findings from Q1 to further explore
+## Using findings from Q1 to explore
 Abnormal credit card was found at the end of Q1. 
 Using the line plot and dot plot above to explore the date and time when the abnormal spending behaviour happens to see if there are any abnormal gps movements can be found.
 
@@ -396,8 +398,9 @@ Abnormal_cases
 
 
 # Question 3
+Can you infer the owners of each credit card and loyalty card? What is your evidence? Where are there uncertainties in your method? Where are there uncertainties in the data? Please limit your answer to 8 images and 500 words.
 
-## Combine gps and car-assignment data into one
+## Combine data into one
 import car0assignments data into R:
 
 ```{r}
@@ -440,7 +443,7 @@ car_gps <- car_gps %>%
   unite("Name", FirstName, LastName, sep = " ")
 ```
 
-## Matching gps observations with credit card spending observations
+## Matching gps and credit card spending observations
 As I've mentioned before, it is very likely to see the gps observations that occurs after a > 3mins time interval to show up at the location where a credit card purchasing just happened becuase people generally leave a place very soon after pay off their bills.
 
 Following this logic, I used the line paths graph and dot graphs above to find out the moving pattern in a particular day or a particular time, and then match it to a credit card holder that who shares the very similar spending pattern.
@@ -453,14 +456,103 @@ match_result
 
 ```
 
+# Question 4
+Given the data sources provided, identify potential informal or unofficial relationships among GASTech personnel. Provide evidence for these relationships. Please limit your response to 8 images and 500 words.
+
+## Plot path plot 
+```{r}
+gps_path_selected <- gps_path2 %>%
+  filter( id %in% c(7,33))
+tmap_mode("view")
+tm_shape(bgmap) +
+  tm_rgb(bgmap, r = 1,g = 2,b = 3,
+       alpha = NA,
+       saturation = 1,
+       interpolate = TRUE,
+       max.value = 255) +
+  tm_shape(gps_path_selected) +
+  tm_lines(col = 'id', style = "fixed")
+```
+
+From the line chart above, we can see a strong similarity between CarId 7 and 33. These two people always showed up on the same road and end at the same destination.
+
+```{r}
+car2 <- car %>%
+  filter(CarID %in% c(33, 7))
+
+car2
+  
+```
+
+CarId 7 is Elsa Orilla. She is an engineering as a drill technician. 
+CarId 33 is Brand Tempestad. He is also an engineering as a drill technician.
+
+According to the graph plotted, Elsa and Brand ate lunch together at Ouzeri Elian at 13:22 on January 6th. They also showed up quite frequently at the Chostus Hotel. They are there at 12:56 on Jan 8th and 13:17 on Jan 14th. All these movements prove to there is an intimate relationship between Elsa and Orilla.
 
 
+```{r}
+gps_path_selected <- gps_path2 %>%
+  filter( id %in% c(22,30, 15))
+tmap_mode("view")
+tm_shape(bgmap) +
+  tm_rgb(bgmap, r = 1,g = 2,b = 3,
+       alpha = NA,
+       saturation = 1,
+       interpolate = TRUE,
+       max.value = 255) +
+  tm_shape(gps_path_selected) +
+  tm_lines(col = 'id', style = "fixed")
+```
+
+```{r}
+car3 <- car %>%
+  filter(CarID %in% c(22, 30, 15))
+
+car3
+  
+```
+
+According to the line graph ploted, Loreto, Adra and Felix drink coffee at Brew've Been Served very frequently. They generally meet around 8:10 am. 
+Habits like this indicates there is a close relationship between these 3 staffs.
 
 
+# Question 5
+Do you see evidence of suspicious activity?
 
+Draw line graph of suspicious paths in deep night:
 
+```{r}
+gps_path_selected <- gps_path2 %>%
+  filter(hour %in% c("02", "03", "04", "05"))
+tmap_mode("view")
+tm_shape(bgmap) +
+  tm_rgb(bgmap, r = 1,g = 2,b = 3,
+       alpha = NA,
+       saturation = 1,
+       interpolate = TRUE,
+       max.value = 255) +
+  tm_shape(gps_path_selected) +
+  tm_lines(col = 'id', style = "fixed")
+```
 
+According to this graph, we can see suspicious paths of people with CarID 24, 21, 15, 16 in deep night times. 
 
+```{r}
+car4 <- car %>%
+  filter(CarID %in% c(24, 21, 15, 16))
 
+car4
+  
+```
 
+All these 4 people are security in GasTech. This Employment Type does provide them advantages if they has hidden plan involved in this kidnap case.
+Traveling path of these 4 also very similar on the graph.
+Because of all these above reasons, places they have stopped by in the deep night before they met are the Top suspicious locations that worth police's attention.
 
+These locations are:
+Brew've Been Served where they always meet up in the morning.
+Frydo's Autosupploy N' More, where seem to be their meeting palce in the deep night.
+Chostus Hotel where they stopped by.
+Taxiarchon Park where they stopped by when they on their way to meet in the deep night.
+Ahaggo Museum where Minke, Hennie, and Isia always passed by before (or after) their meeting in the deep night.
+Spetson Park where Loreto always passed by before (or after) their meeting in the deep night.
